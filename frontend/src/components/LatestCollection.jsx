@@ -4,15 +4,17 @@ import Title from "./Title.jsx";
 import ProductItem from "./ProductItem.jsx";
 
 const LatestCollection = () => {
-  const { products } = useContext(ShopContext);
 
+  const { products } = useContext(ShopContext);
   const [latestProducts, setLatestProducts] = useState([]);
+
   useEffect(() => {
     if (products?.length) {
       setLatestProducts(products.slice(0, 10));
     }
   }, [products]);
 
+  
   return (
     <div className=" my-10">
       <div className=" text-center py-8 text-3xl">

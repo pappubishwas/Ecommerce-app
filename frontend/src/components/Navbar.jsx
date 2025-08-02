@@ -24,7 +24,7 @@ const Navbar = () => {
   return (
     <div className="flex items-center justify-between py-5 font-medium">
       <Link to="/">
-        <img src={assets.logo} className=" w-36" alt="logo" />
+        <img src={assets.logo} className=" w-40" alt="logo" />
       </Link>
 
       <ul className=" hidden sm:flex gap-5 text-sm text-gray-700">
@@ -59,7 +59,7 @@ const Navbar = () => {
             onClick={() => (token ? null : navigate("/login"))}
             src={assets.profile_icon}
             className="w-5 cursor-pointer"
-            alt=""
+            alt="profile icon"
           />
           {/* Dropdown Menu */}
           {token && (

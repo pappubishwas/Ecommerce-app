@@ -4,6 +4,7 @@ import Title from "../components/Title"
 import ProductItem from "../components/ProductItem"
 
 const RelatedProducts = ({ category, subCategory }) => {
+  
   const { products } = useContext(ShopContext);
   const [related, setRelated] = useState([]);
 
@@ -12,13 +13,15 @@ const RelatedProducts = ({ category, subCategory }) => {
       let productCopy = products.slice();
 
       productCopy = productCopy.filter((item) => category === item.category);
-      productCopy = productCopy.filter(
-        (item) => subCategory === item.subCategory
-      );
+
+      productCopy = productCopy.filter((item) => subCategory === item.subCategory);
 
       setRelated(productCopy.slice(0, 5));
+      
     }
   }, [products]);
+
+
   return (
     <div className="my-24">
       <div className="text-center text-3xl py-2">
